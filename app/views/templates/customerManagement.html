@@ -1,0 +1,28 @@
+<div ng-init="customerManagementCtrl.customerInit()">
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Customer Id</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="customer in customerManagementCtrl.customers">     
+        <td>
+          <span>{{ customer.id }}</span>
+        </td>
+            <td>
+          <span>{{ customer.firstname }}</span>
+        </td>
+         <td>
+          <span>{{ customer.lastname }}</span>
+        </td>
+        <td>
+          <span>{{ customer.email }}</span>
+        </td>
+    </tr>
+  </tbody>
+</table>
+  </div>

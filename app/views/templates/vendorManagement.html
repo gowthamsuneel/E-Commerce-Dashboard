@@ -1,0 +1,46 @@
+<div ng-init="vendorManagementCtrl.vendorInit()">
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Vendor Id</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Password</th>
+      <th scope="col"><button ng-click="vendorManagementCtrl.add()" class="on-hover">Add New</button></th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr ng-repeat="profile in vendorManagementCtrl.Profiles">
+      
+
+            <td>
+        
+          <span>{{ profile.id }}</span>
+        </td>
+            <td>
+          <input type="text" ng-model="profile.firstname" ng-show="profile.editable">
+          <span ng-hide="profile.editable">{{ profile.firstname }}</span>
+        </td>
+         <td>
+          <input type="text" ng-model="profile.lastname" ng-show="profile.editable">
+          <span ng-hide="profile.editable">{{ profile.lastname }}</span>
+        </td>
+        <td>
+          <input type="text" ng-model="profile.email" ng-show="profile.editable">
+          <span ng-hide="profile.editable">{{ profile.email }}</span>
+        </td>
+        <td>
+          <input type="text" ng-model="profile.password" ng-show="profile.editable">
+          <span ng-hide="profile.editable">{{ profile.password }}</span>
+        </td>
+        <td>
+          <span ng-click="vendorManagementCtrl.edit($index)" ng-hide="profile.editable" class="on-hover">Edit</span>
+          <span ng-click="vendorManagementCtrl.save($index)" ng-show="profile.editable" class="on-hover">Save</span>
+          <span ng-click="vendorManagementCtrl.delete($index)" class="on-hover"> | Delete</span>
+        </td>
+    </tr>
+  </tbody>
+</table>
+  </div>

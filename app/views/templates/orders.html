@@ -1,0 +1,46 @@
+<div ng-init="ordersCtrl.init();">
+  <div ng-if="!ordersCtrl.isEmpty">
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Order Id</th>
+      <th scope="col">Custormer Name</th>
+      <th scope="col">Product Details</th>
+      <th scope="col">Product Price</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Date</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr  ng-repeat="order in ordersCtrl.orders" >
+    {{order}}
+         <td>
+          <span>{{ order._id }}</span>
+        </td>
+        <td>
+          <span>{{ order.customername }}</span>
+        </td>        
+          <td><span>{{ order.pdetails }}</span></td>
+          <td><span>{{ order.price}}</span></td>
+          <td><span>{{ order.quantity}}</span></td>
+        <td>
+          <span>{{ order.date }}</span>
+        </td>
+      <td>
+        <button ng-click="ordersCtrl.cancel($index)" class="on-hover"> Cancel</button>
+      </td>
+        
+        </tr>
+        
+        
+    
+  </tbody>
+</table>
+</div>
+<div class="row" ng-if="ordersCtrl.isEmpty">
+  <div class="col-12 text-center">
+    <h5 class="text-muted">No orders available</h5>
+  </div>
+
+  </div>

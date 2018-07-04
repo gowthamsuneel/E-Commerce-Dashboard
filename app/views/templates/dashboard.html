@@ -1,0 +1,62 @@
+
+			<!-- DASHBOARD SETUP -->
+		  	<div class="row" style="margin-top:0.5rem;">
+		  		<div class="col-12 text-center">
+			  		<h4>Hi, {{ dashCtrl.userName }}</h4>
+				   	<div class="dash-button">
+						<a class="btn btn-warning" ng-href="#/product/create" style="cursor: pointer;margin-top: 0.5rem;
+							color:#160b09;" ng-show="dashCtrl.addProduct">
+							<span><i class="fa fa-level-up text-muted" style="padding:0px 10px;" aria-hidden="true"></i></span>Create a Product
+						</a>
+						<a class="btn btn-warning" ng-href="#/vendor/update" style="cursor: pointer;margin-top: 0.5rem;
+							color:#160b09;" ng-show="dashCtrl.viewVendors">
+							<span><i class="fa fa-shopping-bag text-muted" style="padding:0px 10px;" aria-hidden="true"></i></span>View Vendors
+						</a>
+						<a class="btn btn-warning" ng-href="#/customer" style="cursor: pointer;margin-top: 0.5rem;
+							color:#160b09;" ng-show="dashCtrl.viewCustomers">
+							<span><i class="fa fa-shopping-bag text-muted" style="padding:0px 10px;" aria-hidden="true"></i></span>View Customers
+						</a>
+                        <a class="btn btn-warning" ng-href="#/orders/all" style="cursor: pointer;margin-top: 0.5rem;
+							color:#160b09;">
+							<span><i class="fa fa-shopping-bag text-muted" style="padding:0px 10px;" aria-hidden="true"></i></span>View All Orders
+						</a>
+
+						<a class="btn btn-warning" ng-href="#/product/all" style="cursor: pointer;margin-top: 0.5rem;
+							color:#160b09;">
+							<span><i class="fa fa-shopping-bag text-muted" style="padding:0px 10px;" aria-hidden="true"></i></span>View products
+						</a>
+					</div>
+				</div>
+
+		  	</div>
+		  	<hr>
+
+		  	<!-- RECENTLY ADDED PRODUCT -->
+		  	<div class="row">
+			  	<!-- <div class="col-12" ng-if="!dashCtrl.productAvail">
+			  		<h4 class="text-muted">* No products to show</h4>
+			  	</div> -->
+		  		<div class="col-12 col-sm-6 col-md-5 offset-md-1" ng-if="dashCtrl.productAvail">
+					<div class="card dash-card">
+					  <div class="card-header">
+					    <h6>Recently Added Product</h6>
+					  </div>
+					  <div class="card-block text-center">
+					    
+					    <ul class="list-group list-group-flush">
+						    <li class="list-group-item">Name : {{ dashCtrl.recentProduct.productName }}</li>
+						    <li class="list-group-item">Category : {{ dashCtrl.recentProduct.category }}</li>
+						    <li class="list-group-item">Owner : {{ dashCtrl.recentProduct.owner.firstName }}</li>
+		  				</ul>
+		  				<div style="display: flex;justify-content: space-between;margin-top: 0.8rem;">
+						    <a href="#/product/{{dashCtrl.recentProduct._id }}" class="btn btn-primary"> More
+						    </a>
+						    <span ng-click="dashCtrl.addToCart()"><i class="fa fa-plus-circle fa-2x" data-toggle="tooltip" data-placement="bottom" title="Add to cart"></i></span>
+						</div>
+					  </div>
+					</div>
+				</div>
+			</div>
+		    
+		
+
