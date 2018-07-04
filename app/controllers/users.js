@@ -98,7 +98,7 @@ module.exports.controllerFunction = function(app) {
                     firstName   : req.body.firstname,
                     lastName    : req.body.lastname,
                     email       : req.body.email,
-                    role        : ""
+                    role        : "customer"
                 }); 
 
                 newUser.password = crypto.encrypt(key,req.body.password);
